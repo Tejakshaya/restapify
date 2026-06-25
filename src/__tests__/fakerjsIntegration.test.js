@@ -1,5 +1,5 @@
 import * as path from 'path'
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 import { getRoute } from '../../src/getRoute'
 import { getFakerVarsInContent, getContentWithReplacedFakerVars, areFakerVarsSyntaxValidInContent } from '../../src/fakerHelpers'
@@ -7,18 +7,20 @@ import { getFakerVarsInContent, getContentWithReplacedFakerVars, areFakerVarsSyn
 // D A T A
 import getPostsById from '../../test/api/posts/[postid]/_.json'
 
-jest.mock('faker', () => ({
-  lorem: {
-    text: jest.fn().mockImplementation(() => 'fake' ),
-  },
-  internet: {
-    email: jest.fn().mockImplementation(() => 'fake@email.com' ),
-  },
-  time: {
-    recent: jest.fn().mockImplementation(() => 123 ),
-  },
-  datatype: {
-    boolean: jest.fn().mockImplementation(() => true )
+jest.mock('@faker-js/faker', () => ({
+  faker: {
+    lorem: {
+      text: jest.fn().mockImplementation(() => 'fake' ),
+    },
+    internet: {
+      email: jest.fn().mockImplementation(() => 'fake@email.com' ),
+    },
+    time: {
+      recent: jest.fn().mockImplementation(() => 123 ),
+    },
+    datatype: {
+      boolean: jest.fn().mockImplementation(() => true )
+    }
   }
 }))
 
