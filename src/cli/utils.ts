@@ -123,7 +123,9 @@ export const runServer = (config: RestapifyParams): void => {
   })
 
   rpfy.on('server:restart', () => {
-    console.log(chalk.green('✅ API updated!'))
+    const now = new Date()
+    const timestamp = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`
+    console.log(chalk.green(`[${timestamp}] ✅ API updated!`))
   })
 
   rpfy.run()

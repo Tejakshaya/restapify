@@ -6,12 +6,14 @@ import {
   isStatementObjectValid
 } from '../../src/forLoopHelpers'
 
-jest.mock('faker', () => ({
-  internet: {
-    email: jest.fn().mockImplementation(() => 'fake@email.com' ),
-  },
-  datatype: {
-    boolean: jest.fn().mockImplementation(() => true )
+jest.mock('@faker-js/faker', () => ({
+  faker: {
+    internet: {
+      email: jest.fn().mockImplementation(() => 'fake@email.com' ),
+    },
+    datatype: {
+      boolean: jest.fn().mockImplementation(() => true )
+    }
   }
 }))
 

@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🐛 Fixed
 - API reponds with an error message and status 500 if it's impossible to cast a variable 
 - API is updated when a route file is deleted
+- migrate from deprecated `faker` package to `@faker-js/faker` (#89)
+- add timestamp to CLI "API updated" log message (#91)
 
 ## [2.3.0] - 2021-08-03
 ### ✨ Added
